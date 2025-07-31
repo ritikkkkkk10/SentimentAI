@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Reset */
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Global CSS Variables === */
+
+/* LIGHT THEME (Default) */
+:root {
+  --bg: #ffffff;
+  --card-bg: #f9fafb;
+  --border: #e5e7eb;
+  --heading: #111827;
+  --body-text: #374151;
+  --button: #6366f1;
+  --button-hover: #4f46e5;
+  --gradient-from: #6366f1;
+  --gradient-to: #d946ef;
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --icon: #6b7280;
+  --link: #3b82f6;
+  --link-hover: #1d4ed8;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--body-text);
+  background-color: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* DARK THEME (Applied via class) */
+.dark {
+  --bg: #0b1120;
+  --card-bg: #111827;
+  --border: #1f2937;
+  --heading: #f3f4f6;
+  --body-text: #d1d5db;
+  --button: #6366f1;
+  --button-hover: #4f46e5;
+  --gradient-from: #6366f1;
+  --gradient-to: #d946ef;
+  --input-bg: #1a2332;
+  --input-border: #334155;
+  --icon: #94a3b8;
+  --link: #60a5fa;
+  --link-hover: #3b82f6;
+}
+
+.bg-theme {
+  background-color: var(--bg);
+}
+
+/* Typography */
+a {
+  font-weight: 500;
+  color: var(--link);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--link-hover);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--body-text);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--heading);
+}
+
+/* Button Styling */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+button:hover {
+  background-color: var(--button-hover);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Respect system theme if no manual toggle */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light):not(.dark) {
+    --bg: #0b1120;
+    --card-bg: #111827;
+    --border: #1f2937;
+    --heading: #f3f4f6;
+    --body-text: #d1d5db;
+    --button: #6366f1;
+    --button-hover: #4f46e5;
+    --gradient-from: #6366f1;
+    --gradient-to: #d946ef;
+    --input-bg: #1a2332;
+    --input-border: #334155;
+    --icon: #94a3b8;
+    --link: #60a5fa;
+    --link-hover: #3b82f6;
+  }
+}
+
